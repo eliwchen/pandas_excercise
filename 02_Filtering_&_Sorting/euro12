@@ -1,0 +1,22 @@
+import pandas as pd
+import re
+# euro12=pd.read_csv("https://raw.githubusercontent.com/guipsamora/pandas_exercises/master/02_Filtering_%26_Sorting/Euro12/Euro_2012_stats_TEAM.csv")
+# euro12.to_csv("euro12",index=False)
+euro12=pd.read_csv("euro12")
+# print(euro12.head(2))
+# print(euro12.info())
+# print(euro12.describe())
+# print(euro12["Goals"])
+# print(euro12["Team"].nunique()) #查看参与euro2012的队伍数
+discipline=euro12.loc[:,["Team","Yellow Cards","Red Cards"]]
+# print(discipline)
+# print(discipline.sort_values(by=["Red Cards","Yellow Cards"],ascending=False))
+# print(discipline["Yellow Cards"].mean())
+# print(euro12[euro12["Goals"]<=6])
+# print(discipline[discipline["Team"].str.contains(r"G.*?")]) #查找以G开头的队伍，利用正则表达式进行匹配
+# print(discipline[discipline["Team"].str.startswith("G")]) #查找以G开头的队伍，利用正则表达式进行匹配
+# print(euro12.iloc[:,0:7]) #选取前7列数据
+# print(euro12.iloc[:,range(7)]) #选取前7列数据
+# print(euro12.iloc[:,0:len(euro12.columns)-3]) #选取前n-3列数据
+print(euro12.iloc[:,0:-3]) #选取前n-3列数据
+print(euro12[euro12["Team"].isin(["England","Italy","Russia"])].loc[:,["Team","Shooting Accuracy"]])
