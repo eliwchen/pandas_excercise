@@ -1,0 +1,13 @@
+import pandas as pd
+# food=pd.read_table("D:\en.openfoodfacts.org.products.tsv",sep='\t',low_memory=False)
+# food.to_csv("food")
+# print(food.head(10))
+food=pd.read_csv("food")
+food.drop(food.columns[0],axis=1,inplace=True)
+print(food.info())
+print(food.head(5))
+print(food.iloc[:,105])
+print(food.columns[105])
+print(food.iloc[:,105].dtype)
+print(food.columns)
+print(food.loc[19,"product_name"])
